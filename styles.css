@@ -208,4 +208,38 @@ footer p {
     section:nth-child(3) {
         padding: 60px 45px;
     }
+    
+}/* Massage-Angebote */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #f8f1e8;
+    padding: 30px 20px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #e3d5c5;
+}
+
+.service-card h3 {
+    margin-top: 0;
+}
+
+.service-card p {
+    margin-bottom: 10px;
+    color: #735c49;
+}
+
+.service-card strong {
+    font-size: 22px;
+    color: #4a3022;
+}
+@media (min-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
