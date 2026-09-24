@@ -1,0 +1,211 @@
+/* =========================================
+   Vanhdy Relax Massage
+   Grundlegendes Design
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f1e8;
+    color: #3d2b20;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HEADER / HERO
+   ========================================= */
+
+header {
+    background-color: #e9ded0;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    margin: 0 0 15px;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: #3b281d;
+}
+
+header p {
+    margin: 0;
+    font-size: 20px;
+    color: #6d5543;
+}
+
+
+/* =========================================
+   HAUPTBEREICH
+   ========================================= */
+
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+
+/* =========================================
+   ÜBERSCHRIFTEN
+   ========================================= */
+
+h2 {
+    margin: 0 0 25px;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #4a3022;
+}
+
+h3 {
+    margin: 30px 0 5px;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #553829;
+}
+
+p {
+    font-size: 17px;
+}
+
+
+/* =========================================
+   MASSAGE-ANGEBOTE
+   ========================================= */
+
+section:nth-child(2) {
+    background-color: #eee4d7;
+    padding: 30px 25px;
+    border-radius: 16px;
+}
+
+section:nth-child(2) h3 {
+    margin-top: 25px;
+}
+
+section:nth-child(2) h3:first-of-type {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   TERMIN-BEREICH
+   ========================================= */
+
+section:nth-child(3) {
+    text-align: center;
+    background-color: #4a3022;
+    color: #f8f1e8;
+    padding: 45px 25px;
+    border-radius: 16px;
+}
+
+section:nth-child(3) h2 {
+    color: #f8f1e8;
+}
+
+section:nth-child(3) p {
+    color: #eadfd3;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+button {
+    margin-top: 15px;
+    padding: 15px 28px;
+
+    border: 1px solid #d6b895;
+    border-radius: 30px;
+
+    background-color: #9a7658;
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #b18b68;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 30px 20px;
+    background-color: #332219;
+    color: #d9c8b8;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   GRÖSSERE BILDSCHIRME
+   ========================================= */
+
+@media (min-width: 768px) {
+
+    header {
+        padding: 100px 40px;
+    }
+
+    header h1 {
+        font-size: 58px;
+    }
+
+    header p {
+        font-size: 23px;
+    }
+
+    main {
+        padding: 80px 40px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    section:nth-child(2) {
+        padding: 45px;
+    }
+
+    section:nth-child(3) {
+        padding: 60px 45px;
+    }
+}
