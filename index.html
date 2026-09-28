@@ -9,9 +9,19 @@
 
 <body>
 
-    <header>
-        <h1>Vanhdy Relax Massage</h1>
-        <p>Entspannung für Körper und Geist</p>
+    <nav>
+    <a href="#massagen">Unsere Massagen</a>
+    <a href="#termin">Termin</a>
+    </nav>
+
+    <header class="hero">
+        <img src="headerpicture.jpg" alt="Entspannende Massage">
+
+
+        <div class="hero-content">
+            <h1>Vanhdy Relax Massage</h1>
+            <p>Entspannung für Körper und Geist</p>
+        </div>
     </header>
 
     <main>
@@ -24,16 +34,26 @@
             </p>
         </section>
 
-        <section class="services">
-    <h2>Unsere Massagen</h2>
+    <section class="services" id="massagen">    
+        <h2>Unsere Massagen</h2>
 
     <div class="service-grid">
 
         <div class="service-card">
-            <h3>Thai Öl Massage</h3>
-            <p>60 Minuten</p>
-            <strong>40 €</strong>
-        </div>
+    <div class="service-front">
+        <h3>Thai Öl Massage</h3>
+        <p>60 Minuten</p>
+        <strong>40 €</strong>
+    </div>
+
+    <div class="service-back">
+        <h3>Thai Öl Massage</h3>
+        <p>
+            Eine entspannende Massage mit warmem Öl,
+            die Körper und Geist zur Ruhe kommen lässt.
+        </p>
+    </div>
+</div>
 
         <div class="service-card">
             <h3>Thai Aroma Massage</h3>
@@ -56,7 +76,7 @@
     </div>
 </section>
 
-        <section>
+        <section id="termin">
             <h2>Termin vereinbaren</h2>
             <p>Sie möchten einen Termin vereinbaren?</p>
             <button>Termin anfragen</button>
