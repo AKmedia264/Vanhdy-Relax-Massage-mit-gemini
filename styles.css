@@ -223,6 +223,9 @@ section:nth-child(2) h3:first-of-type {
     transform: rotateY(180deg);
 }
 
+.tap-hint {
+    display: none;
+}
 
 /* =========================================
    FLIP BEIM HOVER
@@ -340,4 +343,16 @@ footer p {
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+}
+
+@media (max-width: 767px) {
+
+    .tap-hint {
+        display: block;
+        margin-top: 15px;
+        font-size: 13px;
+        color: #9a7658;
+    }
+
 }
