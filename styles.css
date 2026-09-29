@@ -19,8 +19,9 @@ body {
     line-height: 1.6;
 }
 
+
 /* =========================================
-   NAVIGATION   
+   NAVIGATION
    ========================================= */
 
 nav {
@@ -33,7 +34,7 @@ nav a {
     display: inline-block;
     margin: 0 10px;
     padding: 10px 15px;
-    
+
     color: #4a3022;
     text-decoration: none;
     font-weight: 600;
@@ -42,6 +43,8 @@ nav a {
 nav a:hover {
     color: #9a7658;
 }
+
+
 /* =========================================
    HEADER / HERO
    ========================================= */
@@ -69,6 +72,7 @@ nav a:hover {
 
     object-fit: cover;
 }
+
 .hero::after {
     content: "";
     position: absolute;
@@ -156,6 +160,76 @@ section:nth-child(2) h3 {
 
 section:nth-child(2) h3:first-of-type {
     margin-top: 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+
+/* =========================================
+   FLIP-KARTEN
+   ========================================= */
+
+.service-card {
+    height: 220px;
+    perspective: 1000px;
+}
+
+.service-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.service-front,
+.service-back {
+    position: absolute;
+    inset: 0;
+
+    background-color: #f8f1e8;
+    padding: 30px 20px;
+
+    border-radius: 14px;
+    border: 1px solid #e3d5c5;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+}
+
+.service-front h3,
+.service-back h3 {
+    margin-top: 0;
+}
+
+.service-front p,
+.service-back p {
+    margin-bottom: 10px;
+    color: #735c49;
+}
+
+.service-front strong {
+    font-size: 22px;
+    color: #4a3022;
+}
+
+.service-back {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================================
+   FLIP BEIM HOVER
+   ========================================= */
+
+.service-card:hover .service-inner {
+    transform: rotateY(180deg);
 }
 
 
@@ -262,37 +336,7 @@ footer p {
     section:nth-child(3) {
         padding: 60px 45px;
     }
-    
-}/* Massage-Angebote */
 
-.service-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.service-card {
-    background-color: #f8f1e8;
-    padding: 30px 20px;
-    border-radius: 14px;
-    text-align: center;
-    border: 1px solid #e3d5c5;
-}
-
-.service-card h3 {
-    margin-top: 0;
-}
-
-.service-card p {
-    margin-bottom: 10px;
-    color: #735c49;
-}
-
-.service-card strong {
-    font-size: 22px;
-    color: #4a3022;
-}
-@media (min-width: 768px) {
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
