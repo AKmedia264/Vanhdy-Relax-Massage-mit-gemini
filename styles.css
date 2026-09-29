@@ -356,3 +356,15 @@ footer p {
     }
 
 }
+@media (max-width: 767px) {
+
+    .hero {
+        min-height: 350px;
+        padding: 40px 20px;
+    }
+
+    .hero > img {
+        object-position: center center;
+    }
+
+}
