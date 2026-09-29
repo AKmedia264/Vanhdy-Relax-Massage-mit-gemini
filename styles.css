@@ -346,7 +346,7 @@ footer p {
     
 }
 
-@media (max-width: 767px) {
+@media (hover: none) and (pointer: coarse) {
 
     .tap-hint {
         display: block;
