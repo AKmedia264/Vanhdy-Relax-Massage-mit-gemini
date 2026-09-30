@@ -1,6 +1,5 @@
 /* =========================================
-   Vanhdy Relax Massage
-   Grundlegendes Design
+   Vanhdy Relax Massage - Hauptdesign
    ========================================= */
 
 * {
@@ -28,13 +27,16 @@ nav {
     text-align: center;
     padding: 15px 20px;
     background-color: #f7f1e8;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 nav a {
     display: inline-block;
     margin: 0 10px;
     padding: 10px 15px;
-
     color: #4a3022;
     text-decoration: none;
     font-weight: 600;
@@ -52,24 +54,19 @@ nav a:hover {
 .hero {
     position: relative;
     min-height: 500px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     padding: 60px 20px;
-
     overflow: hidden;
 }
 
 .hero > img {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -77,14 +74,12 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-
-    background: rgba(40, 25, 15, 0.35);
+    background: rgba(40, 25, 15, 0.4);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-
     max-width: 700px;
 }
 
@@ -97,14 +92,23 @@ header h1 {
 }
 
 header p {
-    margin: 0;
+    margin: 0 0 15px;
     font-size: 20px;
     color: #f3e9dc;
 }
 
+.hero-subhint {
+    display: inline-block;
+    font-size: 14px;
+    color: #f3e9dc;
+    background-color: rgba(74, 48, 34, 0.75);
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
 
 /* =========================================
-   HAUPTBEREICH
+   HAUPTBEREICH & SEKTIONEN
    ========================================= */
 
 main {
@@ -117,11 +121,6 @@ main {
 section {
     margin-bottom: 70px;
 }
-
-
-/* =========================================
-   ÜBERSCHRIFTEN
-   ========================================= */
 
 h2 {
     margin: 0 0 25px;
@@ -141,25 +140,23 @@ h3 {
 
 p {
     font-size: 17px;
+    color: #553829;
 }
 
 
 /* =========================================
-   MASSAGE-ANGEBOTE
+   MASSAGE-ANGEBOTE (Heller Kasten)
    ========================================= */
 
-section:nth-child(2) {
+section.services {
     background-color: #eee4d7;
-    padding: 30px 25px;
+    padding: 40px 30px;
     border-radius: 16px;
 }
 
-section:nth-child(2) h3 {
-    margin-top: 25px;
-}
-
-section:nth-child(2) h3:first-of-type {
-    margin-top: 0;
+section.services h2 {
+    text-align: left;
+    margin-bottom: 25px;
 }
 
 .service-grid {
@@ -182,7 +179,6 @@ section:nth-child(2) h3:first-of-type {
     position: relative;
     width: 100%;
     height: 100%;
-
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
 }
@@ -191,15 +187,11 @@ section:nth-child(2) h3:first-of-type {
 .service-back {
     position: absolute;
     inset: 0;
-
     background-color: #f8f1e8;
     padding: 30px 20px;
-
     border-radius: 14px;
     border: 1px solid #e3d5c5;
-
     text-align: center;
-
     backface-visibility: hidden;
 }
 
@@ -227,20 +219,47 @@ section:nth-child(2) h3:first-of-type {
     display: none;
 }
 
-/* =========================================
-   FLIP BEIM HOVER
-   ========================================= */
-
 .service-card:hover .service-inner {
     transform: rotateY(180deg);
 }
 
 
 /* =========================================
-   TERMIN-BEREICH
+   INFO-KARTEN (Gut zu wissen & Ablauf)
    ========================================= */
 
-section:nth-child(3) {
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.info-card {
+    background-color: #eee4d7;
+    padding: 25px 20px;
+    border-radius: 14px;
+    border: 1px solid #e3d5c5;
+}
+
+.info-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #4a3022;
+}
+
+.info-card p {
+    margin-bottom: 0;
+    color: #735c49;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   TERMIN-BEREICH (Dunkler Kasten)
+   ========================================= */
+
+section#termin {
     text-align: center;
     background-color: #4a3022;
     color: #f8f1e8;
@@ -248,34 +267,134 @@ section:nth-child(3) {
     border-radius: 16px;
 }
 
-section:nth-child(3) h2 {
+section#termin h2 {
     color: #f8f1e8;
+    text-align: center;
 }
 
-section:nth-child(3) p {
+section#termin p {
     color: #eadfd3;
 }
 
+/* WhatsApp Box */
+.whatsapp-box {
+    margin: 25px 0;
+}
 
-/* =========================================
-   BUTTON
-   ========================================= */
+.whatsapp-box p {
+    margin: 0 0 10px 0;
+    color: #f8f1e8;
+}
 
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 26px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Trenner */
+.or-divider {
+    margin: 25px 0 20px 0;
+    position: relative;
+    text-align: center;
+}
+
+.or-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background-color: #6a4939;
+}
+
+.or-divider span {
+    position: relative;
+    background-color: #4a3022;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #eadfd3;
+}
+
+/* Formular im Termin-Bereich */
+.hidden-form {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    text-align: left;
+    margin-top: 0;
+}
+
+.hidden-form.open {
+    max-height: 800px;
+    opacity: 1;
+    margin-top: 30px;
+    background-color: #3d271c;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #f3e9dc;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #6a4939;
+    border-radius: 8px;
+    background-color: #4a3022;
+    color: #fff;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #9a7658;
+    background-color: #553829;
+}
+
+/* Buttons */
 button {
     margin-top: 15px;
     padding: 15px 28px;
-
     border: 1px solid #d6b895;
     border-radius: 30px;
-
     background-color: #9a7658;
     color: white;
-
     font-size: 17px;
     font-weight: 600;
-
     cursor: pointer;
-
     transition: all 0.2s ease;
 }
 
@@ -284,8 +403,10 @@ button:hover {
     transform: translateY(-2px);
 }
 
-button:active {
-    transform: translateY(0);
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #9a7658;
 }
 
 
@@ -303,15 +424,30 @@ footer {
 footer p {
     margin: 0;
     font-size: 14px;
+    color: #d9c8b8;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #d9c8b8;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 
 /* =========================================
-   GRÖSSERE BILDSCHIRME
+   RESPONSIVES DESIGN (Bildschirme ab 768px)
    ========================================= */
 
 @media (min-width: 768px) {
-
     .hero {
         padding: 100px 40px;
     }
@@ -332,39 +468,24 @@ footer p {
         font-size: 38px;
     }
 
-    section:nth-child(2) {
-        padding: 45px;
-    }
-
-    section:nth-child(3) {
-        padding: 60px 45px;
-    }
-
-    .service-grid {
+    .service-grid,
+    .info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
 }
 
 @media (hover: none) and (pointer: coarse) {
-
     .tap-hint {
         display: block;
         margin-top: 15px;
         font-size: 13px;
         color: #9a7658;
     }
-
 }
-@media (max-width: 767px) {
 
+@media (max-width: 767px) {
     .hero {
         min-height: 350px;
         padding: 40px 20px;
     }
-
-    .hero > img {
-        object-position: center center;
-    }
-
 }
