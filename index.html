@@ -3,7 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanhdy Relax Massage</title>
+    <!-- Lokale strukturierte Daten für Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Vanhdy Relax Massage",
+      "image": "https://DEINE-DOMAIN.de/headerpicture.jpg",
+      "@id": "",
+      "url": "https://DEINE-DOMAIN.de",
+      "telephone": "+4915112345678",
+      "priceRange": "25 € - 45 €",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Koenigseer Str. 19",
+        "addressLocality": "Ilmenau",
+        "postalCode": "98694",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.6358,
+        "longitude": 10.9328
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- Wichtig für SEO: Titel mit Hauptbegriff und Ort -->
+    <title>Vanhdy Relax Massage | Entspannung in Gehren / Ilmenau</title>
+    
+    <!-- Die Meta-Beschreibung (der Text unter dem Link bei Google) -->
+    <meta name="description" content="Professionelle Thai- und Entspannungsmassagen in Gehren bei Ilmenau. Genießen Sie wohltuende Massagen in privater Atmosphäre. Termin nach Vereinbarung.">
+
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -11,10 +56,22 @@
 <body>
 
     <nav>
-        <a href="#massagen">Unsere Massagen</a>
-        <a href="#ueber-mich">Über mich</a>
-        <a href="#ablauf">Ablauf & Infos</a>
-        <a href="#termin">Termin</a>
+        <div class="nav-container">
+            <div class="nav-brand">Vanhdy Relax Massage</div>
+            <!-- Der Burger-Button für mobile Geräte -->
+            <button class="menu-toggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="#massagen">Unsere Massagen</a>
+            <a href="#gutscheine">Gutscheine</a>
+            <a href="#ueber-mich">Über mich</a>
+            <a href="#ablauf">Ablauf & Infos</a>
+            <a href="#termin">Termin</a>
+        </div>
     </nav>
 
     <header class="hero">
@@ -37,15 +94,23 @@
             </p>
         </section>
 
-        <!-- ÜBER MICH SEKTION -->
+       <!-- ÜBER MICH SEKTION -->
         <section id="ueber-mich">
             <h2>Über mich</h2>
-            <p>
-                Hallo und herzlich willkommen! Mein Name ist Boualoy Vanhdy Kühn. 
-                Ich komme aus Laos und trage die traditionelle, achtsame Art der Berührung und Entspannung im Herzen. 
-                In meinem liebevoll eingerichteten Studio hier in Gehren möchte ich Ihnen einen Ort der Ruhe schaffen, 
-                an dem Sie den Stress des Alltags komplett hinter sich lassen können.
-            </p>
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- Ersetze 'ueber-mich.jpg' durch den echten Dateinamen des Bildes deiner Frau -->
+                    <img src="ueber-mich.jpg" alt="Vanhdy - Vanhdy Relax Massage">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Hallo und herzlich willkommen! Mein Name ist Boualoy Vanhdy Kühn. 
+                        Ich komme aus Laos und trage die traditionelle, achtsame Art der Berührung und Entspannung im Herzen. 
+                        In meinem liebevoll eingerichteten Studio hier in Gehren möchte ich Ihnen einen Ort der Ruhe schaffen, 
+                        an dem Sie den Stress des Alltags komplett hinter sich lassen können.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="services" id="massagen">    
@@ -125,6 +190,21 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+       <!-- GUTSCHEINE SEKTION -->
+        <section id="gutscheine">
+            <h2>Gutscheine</h2>
+            <p class="section-intro">Machen Sie Ihren Liebsten eine Freude. Unsere Gutscheine können für jede Massageart eingelöst werden und sind direkt bei uns im Studio in Gehren erhältlich.</p>
+            
+            <div class="voucher-container">
+                <div class="product-card single-card">
+                    <div class="product-icon">🎁</div>
+                    <h3>Geschenkgutschein für Entspannung</h3>
+                    <p class="product-desc">Verschenken Sie wohltuende Auszeiten. Der Wert des Gutscheins ist frei wählbar und wird auf Wunsch liebevoll für Sie verpackt.</p>
+                    <span class="product-note">Guthaben frei wählbar • Direkt im Studio abholbar</span>
+                </div>
             </div>
         </section>
 
@@ -218,6 +298,22 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </footer>
+
+    <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Menü automatisch schließen, wenn man auf einen Menüpunkt klickt
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>

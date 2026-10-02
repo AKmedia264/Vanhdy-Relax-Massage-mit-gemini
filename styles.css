@@ -18,32 +18,114 @@ body {
     line-height: 1.6;
 }
 
+/* Verhindert, dass die feste Leiste die Überschriften verdeckt */
+html {
+    scroll-behavior: smooth; /* Damit es butterweich hinscrollt */
+    scroll-padding-top: 90px; /* Passt sich an die Höhe deiner oberen Leiste an */
+}
 
 /* =========================================
-   NAVIGATION
+   NAVIGATION & BURGER-MENÜ
    ========================================= */
 
 nav {
-    text-align: center;
-    padding: 15px 20px;
     background-color: #f7f1e8;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 10px 20px;
 }
 
-nav a {
-    display: inline-block;
-    margin: 0 10px;
+/* Container für Logo und Burger-Button (wichtig fürs Handy) */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-weight: bold;
+    color: #4a3022;
+    font-size: 1rem;
+}
+
+/* Burger-Button (Standardmäßig auf dem Handy sichtbar) */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #4a3022;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Die Links (mobil standardmäßig eingeklappt) */
+.nav-links {
+    display: none; /* Eingeklappt */
+    flex-direction: column;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #e8decb;
+    margin-top: 10px;
+}
+
+.nav-links a {
+    display: block;
+    margin: 5px 0;
     padding: 10px 15px;
     color: #4a3022;
     text-decoration: none;
     font-weight: 600;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #9a7658;
+}
+
+/* Klasse, die per JavaScript aktiviert wird, um das Menü zu öffnen */
+.nav-links.active {
+    display: flex;
+}
+
+/* Ab Tablet / Desktop Bildschirmgröße (> 768px): Zurück zur klassischen Leiste */
+@media (min-width: 768px) {
+    nav {
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        display: none; /* Burger und mobiler Markenname auf dem Desktop weg */
+    }
+
+    .nav-links {
+        display: flex !important; /* Immer anzeigen auf großen Bildschirmen */
+        flex-direction: row;
+        justify-content: center;
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+        gap: 5px;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 10px 15px;
+    }
 }
 
 
@@ -488,4 +570,114 @@ footer p {
         min-height: 350px;
         padding: 40px 20px;
     }
+}
+/* =========================================
+   ÜBER MICH BEREICH MIT BILD
+   ========================================= */
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.about-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    /* Erster Wert (horizontal): 35% schiebt das Bild so, dass das Gesicht in die Mitte rückt. 
+       Zweiter Wert (vertikal): 20% holt den Kopf nach oben. */
+    object-position: 20% 20%; 
+    border-radius: 50%;
+    border: 3px solid #d6b895;
+    box-shadow: 0 4px 15px rgba(61, 43, 32, 0.15);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin: 0;
+}
+
+/* Auf größeren Bildschirmen: Bild links, Text rechts nebeneinander */
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 40px;
+    }
+
+    .about-image img {
+        width: 220px;
+        height: 220px;
+        /* Die Ausrichtung (object-position) gilt hier automatisch weiter, 
+           da sie nicht überschrieben werden muss! */
+    }
+}
+
+/* =========================================
+   GUTSCHEINE BEREICH (ZENTRIERT)
+   ========================================= */
+
+.section-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #5c4033;
+    font-size: 0.95rem;
+}
+
+.voucher-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-card.single-card {
+    background: #fdfbf7;
+    border: 1px solid #e6d5c3;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(61, 43, 32, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.product-card.single-card:hover {
+    transform: translateY(-3px);
+}
+
+.product-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.product-card.single-card h3 {
+    color: #3d2b20;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.product-desc {
+    color: #6b5344;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.product-note {
+    display: inline-block;
+    background: #f4ece1;
+    color: #5c4033;
+    font-size: 0.85rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
 }
