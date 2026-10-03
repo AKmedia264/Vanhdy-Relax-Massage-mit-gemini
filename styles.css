@@ -681,3 +681,7 @@ footer p {
     border-radius: 20px;
     font-weight: 500;
 }
+img {
+    -webkit-touch-callout: none; /* Verhindert das Aufpoppen des Menüs auf iOS/Android */
+    pointer-events: none;        /* Deaktiviert Klicks und langes Drücken komplett auf dem Bild */
+}
